@@ -1,0 +1,354 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!-- EPA Template version 3.2.1, 28 June 2006 -->
+
+<!-- Mirrored from www.epa.gov/med/med_archive_03/smiles.htm by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 06 Sep 2015 12:58:57 GMT -->
+<head>
+<title>SMILES Tutorial | Research | US EPA</title>
+<meta name="DC.description" content="SMILES (Simplified Molecular Input Line Entry System) is a chemical notation that allows a user to represent a chemical structure in a way that can be used by the computer." />
+<meta name="Keywords" content="SMILES, chemical notation, chemical structure" />
+<meta name="DC.title" content="" />
+	<meta name="DC.subject" content="" />
+	<meta name="DC.type" content="" />
+	<!-- For date metadata, use the format YYYY-MM-DD -->
+	<meta name="DC.date.modified" content="2007-01-23" />
+	<meta name="DC.date.created" content="" />
+	<meta name="DC.date.reviewed" content="" />
+  <meta name="DC.language" content="en" />
+	<meta name="DC.creator" content="US EPA, Mid-Continent Ecology Division" />
+	<link rel="schema.DC" href="index.html" />
+	<link rel="meta" href="../rdf/labels.rdf" type="application/rdf+xml" title="ICRA labels" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+	<style type="text/css" media="screen">@import '../css/epa.css';</style>
+	<style type="text/css" media="screen,print">@import '../css/med.css';</style>
+		
+	<!--[if lt IE 7]>
+		<link rel="stylesheet" type="text/css" href="https://www3.epa.gov/epafiles/s/ie.css" />
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" media="print" href="../css/print.css" />
+	<script type="text/javascript" src="../js/epa-core.js"></script>
+	<script type="text/javascript" src="../js/extra.js"></script>
+<link rel="stylesheet" href="../css/archive.css"/>
+</head> 
+
+<body>
+<p class="skip"><a id="skiptop" href="#content" title="Jump to main content.">Jump to main content.</a></p>
+
+<div class="archive"></div>
+<div id="header"> <!-- START EPA HEADER -->
+
+	<div id="logo"><a href="https://www.epa.gov/" title="US EPA home page"><img src="../gif/logo_epaseal.gif" alt="[logo] US EPA" width="100" height="111" /></a></div>
+	
+	<div id="areaname"> <!-- START AREA NAME -->
+		<p>Mid-Continent Ecology Division</p>
+	</div> <!-- END AREA NAME -->
+	
+	<!-- START SEARCH CONTROLS -->
+	 <!-- END SEARCH CONTROLS -->		
+		
+	<ul> <!-- BEGIN BREADCRUMBS -->
+		<li class="first">You are here: <a href="https://www.epa.gov/">EPA Home</a></li>
+		<!-- START AREA BREADCRUMBS -->		<li><a href="prods_pubs.html">Products&nbsp;&amp;&nbsp;Publications</a></li>
+<li>SMILES&nbsp;Tutorial</li>
+		<!-- END AREA BREADCRUMBS -->
+	</ul> <!-- END BREADCRUMBS -->
+
+</div> <!-- END EPA HEADER -->
+
+<hr class="skip" />
+
+<p class="skip"><a name="pagecontents" id="pagecontents"></a><a name="pagetop" id="pagetop"></a></p>
+
+<div id="content"> <!-- BEGIN CONTENT -->
+	<!-- EPA SITE-WIDE ANNOUNCEMENTS - DO NOT REMOVE - this code is used for emergency messages -->
+	<!-- If this page is a Sub-Office/Sub-Region/Center/Lab/Topic home page, CHANGE "sitewidec" TO "sitewideb" -->
+	<p id="sitewidec"></p>
+
+	<!-- BEGIN PAGE NAME -->
+	<h1>SMILES Tutorial</h1>
+	<!-- END PAGE NAME -->
+		
+	<!-- BEGIN CONTENT AREA -->
+	<!-- BEGIN CONTENT AREA -->
+		
+<p></p><h4>What is SMILES?</h4><p></p>
+
+      <p><strong>SMILES</strong> (<b>S</b>implified 
+        <b>M</b>olecular <b>I</b>nput <b>L</b>ine <b>E</b>ntry <b>S</b>ystem) is a chemical notation that allows a user to represent a chemical structure in a way that can be used by the computer. <b>SMILES</b> is
+        an easily learned and flexible notation. The <b>SMILES</b> notation requires
+        that you learn a handful of rules. You do not need to worry about ambiguous
+        representations because the software will automatically reorder your
+        entry into a unique <b>SMILES</b> string when necessary.</p>
+
+      <p><b>SMILES</b> was developed through funding from
+          the U.S. Environmental Protection Agency, Mid-Continent Ecology Division-Duluth,
+          (MED-Duluth) Duluth, MN to the Medicinal Chemistry Project at Pomona
+          College, Claremont, CA and the Computer Sciences Corporation, Duluth,
+          MN. Several publications discuss <b>SMILES</b> in more detail, including
+          Anderson et al. 1987, Weininger 1988, Weininger et al. 1989, and Hunter
+        et al., 1987. </p>
+
+      <p><b>SMILES</b> has five basic syntax rules which
+          must be observed. If basic rules of chemistry are not followed in <b>SMILES</b> entry,
+          the system will warn the user and ask that the structure be edited
+          or reentered. For example, if the user places too many bonds on an
+          atom, a <b>SMILES</b> warning will appear that the structure is impossible.
+          The rules are described below and some examples are provided. The rules
+          below allow for the representation of a two-dimensional structure of
+          a chemical. For the ASTER system, a two-dimensional depiction is adequate.
+          Other rules are available for chemicals that are structural isomers,
+        but will not be discussed in this basic tutorial. </p>
+
+      <p><b>Rule One: Atoms and Bonds</b></p>
+      <p><b>SMILES</b> supports all elements in the periodic
+          table. An atom is represented using its respective atomic symbol. Upper
+          case letters refer to non-aromatic atoms; lower case letters refer
+          to aromatic atoms. If the atomic symbol has more than one letter the
+        second letter must be lower case. </p>
+      <p><b>Bonds are denoted as shown below:</b> </p>
+      <blockquote>
+        <blockquote>
+          <table border="0" width="197">
+            <tr>
+              <td nowrap="nowrap" width="28">-</td>
+                <td nowrap="nowrap" width="141">Single bond</td>
+              </tr>
+            <tr>
+              <td nowrap="nowrap" width="28">=</td>
+                <td nowrap="nowrap" width="141">Double bond</td>
+              </tr>
+            <tr>
+              <td nowrap="nowrap" width="28">#</td>
+                <td nowrap="nowrap" width="141">Triple bond</td>
+              </tr>
+            <tr>
+              <td nowrap="nowrap" width="28">*</td>
+                <td nowrap="nowrap" width="141">Aromatic bond</td>
+              </tr>
+            <tr>
+              <td nowrap="nowrap" width="28">.</td>
+                <td nowrap="nowrap" width="141">Disconnected structures</td>
+              </tr>
+            </table>
+        </blockquote>
+      </blockquote>
+      <p>Single bonds are the default and therefore need not be entered. For example, 'CC' would
+        mean that there is a non-aromatic carbon attached to another non-aromatic carbon by a
+        single bond, and the computer would identify the structure as the chemical ethane. It is
+        also assumed that the bond between two lower case atom symbols is aromatic. A blank
+        terminates the <b>SMILES</b> string.</p>
+      <p><b>Rule Two: Simple Chains</b> </p>
+      <p>By combining atomic symbols and bond symbols simple chain structures can be
+        represented. The structures that are entered using <b>SMILES</b> are
+        hydrogen-suppressed, that is to say that the molecules are represented
+        without hydrogens. The <b>SMILES</b> software
+        understands the number of possible connections that an atom can have.
+        If enough bonds are not identified by the user through <b>SMILES</b> notation,
+        the system will automatically assume that the other connections are satisfied
+        by hydrogen bonds.</p>
+      <p>Some examples: </p>
+      <blockquote>
+        <blockquote>
+          <table border="0" width="275">
+            <tr>
+              <td nowrap="nowrap" width="75">CC</td>
+                <td nowrap="nowrap" width="80">CH<sub>3</sub>CH<sub>3</sub></td>
+                <td nowrap="nowrap" width="115">Ethane</td>
+              </tr>
+            <tr>
+              <td nowrap="nowrap" width="75">C=C</td>
+                <td nowrap="nowrap" width="80">CH<sub>2</sub>CH<sub>2</sub></td>
+                <td nowrap="nowrap" width="115">Ethene</td>
+              </tr>
+            <tr>
+              <td nowrap="nowrap" width="75">CBr</td>
+                <td nowrap="nowrap" width="80">CH<sub>3</sub>Br</td>
+                <td nowrap="nowrap" width="115">Bromomethane</td>
+              </tr>
+            <tr>
+              <td nowrap="nowrap" width="75">C#N</td>
+                <td nowrap="nowrap" width="80">C<u>=</u>N</td>
+                <td nowrap="nowrap" width="115">Hydrocyanic acid</td>
+              </tr>
+            <tr>
+              <td nowrap="nowrap" width="75">Na.Cl</td>
+                <td nowrap="nowrap" width="80">NaCl</td>
+                <td nowrap="nowrap" width="115">Sodium chloride</td>
+              </tr>
+            </table>
+          </blockquote>
+      </blockquote>
+      <p>The user can explicitly identify the hydrogen bonds, but if one hydrogen bond is
+        identified in the string, the <b>SMILES</b> interpreter will assume that
+        the user has identified <b>all</b>
+        hydrogens for that molecule.</p>
+      <blockquote>
+        <blockquote>
+          <p> </p>
+            <table border="0" width="186">
+              <tr>
+                <td nowrap="nowrap" width="133">HC(H)=C(H)(H)</td>
+                <td nowrap="nowrap" width="45">Ethene</td>
+              </tr>
+            </table>
+          </blockquote>
+      </blockquote>
+      <p>Because <b>SMILES</b> allows entry of all elements
+          in the periodic table, and also utilizes hydrogen suppression, the
+          user should be aware of chemicals with two letters that could be misinterpreted
+          by the computer. For example, 'Sc' could be interpreted as a sulfur
+          atom connected to an aromatic carbon by a single bond, or it could
+          be the symbol for scandium. The <b>SMILES</b> interpreter gives priority
+          to the interpretation of a single bond connecting a sulfur atom and
+        an aromatic carbon. To identify scandium the user should enter [Sc].</p>
+      <p><b>Rule Three: Branches</b></p>
+      <p>A branch from a chain is specified by placing the <b>SMILES</b> symbol(s)
+          for the branch between parenthesis. The string in parentheses is placed
+          directly after the symbol for the atom to which it is connected. If
+          it is connected by a double or triple bond, the bond symbol immediately
+        follows the left parenthesis. Some examples:</p>
+      <blockquote>
+        <blockquote>
+          <table border="0" width="293">
+            <tr>
+              <td nowrap="nowrap" width="162">CC(O)C</td>
+                <td nowrap="nowrap" width="123">2-Propanol</td>
+              </tr>
+            <tr>
+              <td nowrap="nowrap" width="162">CC(=O)C</td>
+                <td nowrap="nowrap" width="123">2-Propanone</td>
+              </tr>
+            <tr>
+              <td nowrap="nowrap" width="162">CC(CC)C</td>
+                <td nowrap="nowrap" width="123">2-Methylbutane</td>
+              </tr>
+            <tr>
+              <td nowrap="nowrap" width="162">CC(C)CC(=O)</td>
+                <td nowrap="nowrap" width="123">2-Methylbutanal</td>
+              </tr>
+            <tr>
+              <td nowrap="nowrap" width="162">c1c(N(=O)=O)cccc1</td>
+                <td nowrap="nowrap" width="123">Nitrobenzene</td>
+              </tr>
+            <tr>
+              <td nowrap="nowrap" width="162">CC(C)(C)CC</td>
+                <td nowrap="nowrap" width="123">2,2-Dimethylbutane</td>
+              </tr>
+            </table>
+          </blockquote>
+      </blockquote>
+      <p><b>Rule Four: Rings</b></p>
+      <p><b>SMILES</b> allows a user to identify ring structures
+          by using numbers to identify the opening and closing ring atom. For
+          example, in C1CCCCC1, the first carbon has a number '1' which connects
+          by a single bond with the last carbon which also has a number '1'.
+          The resulting structure is cyclohexane. Chemicals that have multiple
+          rings may be identified by using different numbers for each ring. If
+          a double, single, or aromatic bond is used for the ring closure, the
+        bond symbol is placed before the ring closure number. Some examples:</p>
+      <blockquote>
+        <blockquote>
+          <p>&nbsp;</p>
+            <table border="0" width="288">
+              
+              <tr>
+                <td rowspan="5" valign="middle" align="center" nowrap="nowrap" width="45">or</td>
+                <td nowrap="nowrap" width="149">C=1CCCCC1</td>
+                    <td nowrap="nowrap" width="82">Cyclohexene</td>
+              </tr>
+              <tr>
+                <td nowrap="nowrap" width="149">C*1*C*C*C*C*C1</td>
+                <td nowrap="nowrap" width="82"></td>
+              </tr>
+              <tr>
+                <td nowrap="nowrap" width="149">c1ccccc1</td>
+                <td nowrap="nowrap" width="82">Benzene</td>
+              </tr>
+              <tr>
+                <td nowrap="nowrap" width="149">C1OC1CC</td>
+                <td nowrap="nowrap" width="82">Ethyloxirane</td>
+              </tr>
+              <tr>
+                <td nowrap="nowrap" width="149">c1cc2ccccc2cc1</td>
+                <td nowrap="nowrap" width="82">Naphthalene</td>
+              </tr>
+            </table>
+          </blockquote>
+      </blockquote>
+      <p><b>Rule Five: Charged Atoms</b></p>
+      <p>Charges on an atom can be used to override the knowledge regarding valence that is built into <b>SMILES</b> software.
+          The format for identifying a charged atom consists of the atom followed
+          by brackets which enclose the charge on the atom. The number of charges
+        may be explicitly stated ({-1}) or not ({-}). For example:</p>
+      <blockquote>
+        <blockquote>
+          <p>&nbsp;</p>
+            <table border="0" width="423">
+              <tr>
+                <td nowrap="nowrap" rowspan="3" valign="middle" align="center" width="45">or</td>
+                <td nowrap="nowrap" width="176">CCC(=O)O{-1}</td>
+                <td nowrap="nowrap" width="190">Ionized form of propanoic acid</td>
+              </tr>
+              <tr>
+                <td nowrap="nowrap" width="176">CCC(=O)O{-}</td>
+                <td nowrap="nowrap" width="190"></td>
+              </tr>
+              <tr>
+                <td nowrap="nowrap" width="176">c1ccccn{+1}1CC(=O)O</td>
+                <td nowrap="nowrap" width="190">1-Carboxylmethyl pyridinium</td>
+              </tr>
+            </table>
+          </blockquote>
+      </blockquote>
+      <p><b>Questions?</b></p>
+      <p>If you have questions regarding the <b>SMILES</b> notation,
+          contact ECOTOX Support at -<br />
+          T: (218) 529-5225&nbsp;&nbsp;E-mail: <a href="mailto:ecotox.support@epa.gov">ecotox.support@epa.gov</a>.      </p>
+      <p><b>References:</b></p>
+      <p>Anderson, E., G.D. Veith, and D. Weininger. 1987. SMILES: A line notation and
+        computerized interpreter for chemical structures. Report No. EPA/600/M-87/021. U.S.
+        Environmental Protection Agency, Environmental Research Laboratory-Duluth, Duluth, MN
+        55804</p>
+      <p>Hunter, R.S., F.D. Culver, and A. Fitzgerald. 1987. SMILES User Manual. A Simplified
+        Molecular Input Line Entry System. Includes extended SMILES for defining fragments. Review
+        Draft, Internal Report, Montana State University, Institute for Biological and Chemical
+        Process Control (IPA), Bozeman, MT.</p>
+      <p>Weininger, D. 1988. SMILES, a chemical language and information system. 1. Introduction
+        to methodology and encoding rules. Journal of Chemical Information and Computer Science
+        28: 31-36.</p>      <p>Weininger, D., A. Weininger, and J.L. Weininger. 1989. SMILES. 2. Algorithm for
+        generation of unique SMILES notation. Journal of Chemical Information and Computer Science
+      29: 97-101.</p>
+	  
+	  
+        <!-- END CONTENT AREA -->
+  <!-- BEGIN AREA FOOTER - ADD text/links for area footer within this paragraph tag --><!-- END AREA FOOTER -->
+</div> <!-- END CONTENT -->
+
+<hr class="skip" />
+
+<div id="area-nav"> <!-- BEGIN AREA MAIN NAVIGATION -->
+	<h3 class="skip">Local Navigation</h3>
+</div> <!-- END AREA MAIN NAVIGATION -->
+
+<hr class="skip" />
+
+<div id="footer"> <!-- BEGIN FOOTER -->
+	<ul id="globalfooter">
+		<li><a href="https://www.epa.gov/">EPA Home</a></li>
+		<li><a href="https://www3.epa.gov/epafiles/usenotice.htm">Privacy and Security Notice</a></li> 
+		<!-- CHANGE link to point to your own contact page -->
+		<li class="last"></li>
+	</ul>
+</div> <!-- END FOOTER -->
+
+<p class="skip"><a id="skipbot" href="#content" title="Jump to main content.">Jump to main content.</a></p>
+</body>
+
+<!-- Mirrored from www.epa.gov/med/med_archive_03/smiles.htm by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 06 Sep 2015 12:58:57 GMT -->
+</html>
