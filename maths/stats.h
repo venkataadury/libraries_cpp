@@ -20,6 +20,7 @@ namespace randgen
 		uniform_real_distribution<> distr(min,max);
 		return distr(eng);
 	}
+	inline bool toss() {return (throwarandompoint(0,1)<=0.5);}
 	inline unsigned long randInt(unsigned long int L) {return throwarandompoint(0,L);}
 	template<class T> const T& choice(const std::vector<T>& v) {return v[(int)throwarandompoint(0,v.size())];}
 	template<class T> T& choice(std::vector<T>& v) {return v[(int)throwarandompoint(0,v.size())];}

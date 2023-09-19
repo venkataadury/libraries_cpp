@@ -8,6 +8,7 @@ namespace graphs
   class VertexNotInGraphException : public exception {};
   class AlgorithmFailStateException : public std::exception {};
   class NoPathPossibleException : public AlgorithmFailStateException {};
+  class NoCyclePossibleException : public AlgorithmFailStateException {};
   class NoEulerPathPossibleException : public NoPathPossibleException {};
   class InvalidFlowException : public std::exception
   {
@@ -510,6 +511,40 @@ namespace graphs
       }
       cout <<"--------------\n";*/
       return make_pair(flow,DFSTree<T,double>(resnet,resnet[sind],true,false,edgeIsTraversible));
+    }
+
+    struct WeightedEdge
+    {
+      double wt;
+      WeightedEdge() {wt=0;}
+      explicit WeightedEdge(double v) {wt=v;}
+      template<class T> WeightedEdge(const T& p) {wt=p;}
+
+
+      operator double() const {return wt;}
+    };
+
+    template<class V,class E> std::vector<Vertex<V>> getCycleInternal(Graph<V,E>& g,Vertex<V>& start,std::vector<Vertex<V>> visited,const Vertex<V>& endat)
+    {
+      visited.push_back(start);
+      for(const Edge<E,V>& ed : start.getLeavingEdges())
+      {
+        auto tempv=ed.getSecondEnd(start);
+        if(&tempv==&endat)
+        {
+          if(visited.size()>=3) return visited;
+          else continue;
+        }
+        if(contains(visited,tempv)) continue;
+        try {return getCycleInternal(g,tempv,visited,start);}
+        catch(NoCyclePossibleException& ex) {continue;}
+      }
+      throw NoCyclePossibleException();
+    }
+    template<class V,class E> inline std::vector<Vertex<V>> getCycle(Graph<V,E>& g,Vertex<V>& start) {return getCycleInternal(g,start,std::vector<Vertex<V>>(),start);}
+    template<class T> double removeCyclicFlows(Graph<T,WeightedEdge>& gr,double err=1e-3,bool verbose=false)
+    {
+
     }
   }
 }
