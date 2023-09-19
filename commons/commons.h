@@ -85,9 +85,9 @@ template<class T> static T* sort(T* taex,int l)
 	}
 	return ta;
 }
-template<class T> static bool contains(std::vector<T> v,T el)
+template<class T> static bool contains(const std::vector<T>& v,const T& el)
 {
-	for(T e : v)
+	for(const T& e : v)
 	{
 		if(e==el)
 			return true;
