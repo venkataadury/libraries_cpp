@@ -3,9 +3,11 @@
 #include <vector>
 #include <sstream>
 #include <string>
+#include "maths/maths.h"
 
 namespace MD
 {
+	typedef float numeric;
 	class FrameHeaderUnavailableException : public std::exception {};
 	namespace md_stringfx
 	{
@@ -20,19 +22,19 @@ namespace MD
 
 	class Atom
 	{
-		float* coords;
+		numeric* coords;
 		std::string aname="";
 	public:
-		Atom(float x,float y,float z)
+		Atom(numeric x,numeric y,numeric z)
 		{
-			coords=new float[3];
+			coords=new numeric[3];
 			coords[0]=x;
 			coords[1]=y;
 			coords[2]=z;
 		}
-		Atom(float* r)
+		Atom(numeric* r)
 		{
-			coords=new float[3];
+			coords=new numeric[3];
 			coords[0]=r[0];
 			coords[1]=r[1];
 			coords[2]=r[2];
@@ -42,9 +44,11 @@ namespace MD
 		inline void setName(const std::string& n) {aname=n;}
 		inline const std::string& getName() const {return aname;}
 
-		inline float getX() const {return coords[0];}
-		inline float getY() const {return coords[1];}
-		inline float getZ() const {return coords[2];}
+		inline numeric getX() const {return coords[0];}
+		inline numeric getY() const {return coords[1];}
+		inline numeric getZ() const {return coords[2];}
+
+		inline numeric getDistance2To(const Atom* at)const  {return ::sqr(coords[0]-at->coords[0])+::sqr(coords[1]-at->coords[1])+::sqr(coords[2]-at->coords[2]);}
 	};
 
 	class Frame
@@ -74,7 +78,7 @@ namespace MD
 			}
 			ncrd=std::stoi(line);
 			std::string at;
-			float x,y,z;
+			numeric x,y,z;
 			while(ncrd>0)
 			{
 				getline(df,line);
@@ -102,6 +106,13 @@ namespace MD
 			dumpToStreamAsXYZ(ofl);
 			ofl.close();
 		}
+
+		const Atom* getAtom(int idx)const {return atoms[idx];}
+		Atom* getAtom(int idx) {return atoms[idx];}
+		inline const std::vector<Atom*> getAtoms()const {return atoms;}
+		inline std::vector<Atom*> getAtoms() {return atoms;}
+		inline int getNumAtoms()const {return atoms.size();}
+
 	};
 
 	class Trajectory
@@ -122,5 +133,6 @@ namespace MD
 		inline int getNumFrames() const {return frames.size();}
 		inline Frame& getFrame(int idx) {if(idx>=0) return frames[idx]; else return frames[frames.size()+idx];}
 		inline const Frame& getFrame(int idx) const {if(idx>=0) return frames[idx]; else return frames[frames.size()+idx];}
+		inline const std::vector<Frame>& getFrames()const {return frames;}
 	};
 }
